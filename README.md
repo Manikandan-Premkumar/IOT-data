@@ -2,10 +2,13 @@ This project simulates an IoT sensor that publishes temperature and humidity dat
 
 🔧 Architecture
 Sensor → AWS IoT Core → Lambda → 
+
     ├── S3 (store JSON data)
+    
     └── SNS (send alert if temperature > threshold)
 
 ✅ IAM Permissions Needed
+
 s3:PutObject to the specific bucket
 
 sns:Publish to the topic
