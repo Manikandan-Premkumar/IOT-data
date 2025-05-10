@@ -17,5 +17,10 @@ Amazon S3 (stores JSON files)
 | AWS Lambda       | Parses payload, stores to S3, triggers SNS if `temperature > 25`        |
 | S3 Bucket        | `simulatedtempiot`                                                      |
 | SNS Topic        | `hightempalert` (email alert)                                           |
-| Device ID        | `simulatedSensor001`                                                    |
+| Device ID        | `simulatedSensor`                                                    |
+
+
+
+SNS alert received via Mail
+![image](https://github.com/user-attachments/assets/441dd849-e314-4692-901a-3b24d45127ab)
 
