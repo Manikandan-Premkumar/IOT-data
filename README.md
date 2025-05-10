@@ -1,14 +1,16 @@
 This project simulates an IoT sensor that publishes temperature and humidity data to AWS IoT Core via MQTT. If the temperature exceeds a threshold, an SNS alert is triggered. All data is stored in Amazon S3 using a Lambda function invoked by an IoT Rule.
 
-Architecture
-↓ MQTT
-AWS IoT Core
-↓ IoT Rule (SQL + Condition)
-AWS Lambda (store payload to S3)
-↓
-SNS Topic (alert if temperature > 25°C)
-↓
-Amazon S3 (stores JSON files)
+🔧 Architecture
+Sensor → AWS IoT Core → Lambda → 
+    ├── S3 (store JSON data)
+    └── SNS (send alert if temperature > threshold)
+
+✅ IAM Permissions Needed
+s3:PutObject to the specific bucket
+
+sns:Publish to the topic
+
+logs:* for debugging
      
 | Component        | Details                                                                 |
 |------------------|-------------------------------------------------------------------------|
